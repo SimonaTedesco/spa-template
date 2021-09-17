@@ -1,4 +1,6 @@
 import type { NextPage } from 'next'
+import Link from 'next/link'
+
 
 const Home: NextPage = () => {
   return (
@@ -10,6 +12,13 @@ const Home: NextPage = () => {
     <hr/>
 
     <a href="#">Some Link</a>
+
+    <br/>
+
+    <Link href="/instances">
+      <a>Instances go here!</a>
+    </Link>
+
     </div>  
   )
 }
