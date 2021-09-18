@@ -9,7 +9,7 @@
     "lint": "next lint",
     "export": "next build && next export",
     "exported": "serve ./out/",
-    "fixfix": "prettier -w pages/ components/"
+    "fixfix": "prettier -w pages/ components/ styles/"
   },
   "dependencies": {
     "next": "11.1.2",
