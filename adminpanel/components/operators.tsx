@@ -1,28 +1,10 @@
-const data = [
-  {
-    client: "pippo-2",
-    cluster: "ams",
-    mode: "ON",
-    time_zone: "GMT",
-    max_agents: 17,
-    instance_sha: "4633506b95a4e0757d76f80",
-    long_name: "Pippo",
-    reseller: "ZEBRONS",
-    contact_person: "pippo",
-    contact_email: "me@home",
-    billing_person: "",
-    billing_email: "",
-    expires: "2016-11-11",
-    instance_state: "UNK",
-    instance_state_up: 0,
-    max_retention: 37,
-    client_state: "SOLD",
-    vhostname: "my.booboo.com",
-    kMode: "",
-    kNumber: "",
-    kApikey: "",
-  },
-];
+import * as React from "react";
+
+import { Dispatch } from "redux";
+import { useSelector, shallowEqual, useDispatch } from "react-redux";
+
+import { NewInstance } from "../components/newinstance";
+import { addArticle } from "../store/actionCreators";
 
 function Instance(prop: { instance: IInstance }) {
   const i = prop.instance;
@@ -42,6 +24,17 @@ function Instance(prop: { instance: IInstance }) {
 }
 
 function Operator(prop: { op: Operator }) {
+  const dispatch: Dispatch<any> = useDispatch();
+  const token = prop.op.name;
+
+  const saveInstance = React.useCallback(
+    (article: IInstance) => {
+      article.reseller = token;
+      dispatch(addArticle(article));
+    },
+    [dispatch]
+  );
+
   return (
     <li>
       <a className="uk-accordion-title" href="#">
@@ -53,6 +46,7 @@ function Operator(prop: { op: Operator }) {
             <Instance instance={i} />
           ))}
         </div>
+        <NewInstance saveInstance={saveInstance} />
       </div>
     </li>
   );

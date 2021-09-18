@@ -8,13 +8,6 @@ import { NewInstance } from "../components/newinstance";
 import { addArticle } from "../store/actionCreators";
 
 const Instances: NextPage = () => {
-  const dispatch: Dispatch<any> = useDispatch();
-
-  const saveInstance = React.useCallback(
-    (article: IInstance) => dispatch(addArticle(article)),
-    [dispatch]
-  );
-
   const operators: Operator[] = useSelector(
     (state: SystemState) => state.operators,
     shallowEqual
@@ -22,8 +15,6 @@ const Instances: NextPage = () => {
 
   return (
     <div>
-      <NewInstance saveInstance={saveInstance} />
-
       <h1>Instances go here</h1>
       <hr />
 

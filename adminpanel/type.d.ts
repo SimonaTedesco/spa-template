@@ -26,6 +26,7 @@ interface IInstance {
   client: string;
   cluster: string;
   max_agents: integer;
+  reseller: string;
 }
 
 type Operator = {

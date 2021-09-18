@@ -4,37 +4,53 @@ type Props = {
   saveInstance: (article: IInstance | any) => void;
 };
 
-export const NewInstance: React.FC<Props> = ({ saveInstance }) => {
-  const [article, setArticle] = React.useState<IInstance | {}>();
+export const NewInstance: React.FC<Props> = ({
+  saveInstance: fnSaveInstance,
+}) => {
+  const [myState, setMyState] = React.useState<any>();
 
   const handleArticleData = (e: React.FormEvent<HTMLInputElement>) => {
-    setArticle({
-      ...article,
+    setMyState({
+      ...myState,
       [e.currentTarget.id]: e.currentTarget.value,
     });
   };
 
   const addNewArticle = (e: React.FormEvent) => {
     e.preventDefault();
-    saveInstance(article);
+
+    const stateOk: IInstance = {
+      client: "" + myState.client,
+      cluster: "ams",
+      reseller: "?",
+      max_agents: 99,
+    };
+    fnSaveInstance(stateOk);
   };
 
   return (
-    <form onSubmit={addNewArticle} className="Add-article">
+    <form onSubmit={addNewArticle}>
       <input
         type="text"
-        id="title"
-        placeholder="Instance"
+        id="client"
+        placeholder="Client"
         onChange={handleArticleData}
       />
       <input
         type="text"
-        id="body"
-        placeholder="Ciao"
+        id="cluster"
+        placeholder="Cluster"
         onChange={handleArticleData}
       />
-      <button disabled={article === undefined ? true : false}>
-        Add instance
+      <input
+        type="text"
+        id="max_agents"
+        placeholder="Max Agents"
+        onChange={handleArticleData}
+      />
+
+      <button disabled={myState === undefined ? true : false}>
+        Add client
       </button>
     </form>
   );
