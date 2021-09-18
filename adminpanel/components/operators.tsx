@@ -24,44 +24,49 @@ const data = [
   },
 ];
 
-function Instance(prop: { n: string }) {
+function Instance(prop: { instance: IInstance }) {
+  const i = prop.instance;
   return (
     <div>
       <div className="uk-card uk-card-default uk-card-body">
-        <b>{prop.n}</b>
+        <b>{i.client}</b>
         <a href="" className="uk-icon-button" uk-icon="link"></a>
         <a href="" className="uk-icon-button" uk-icon="settings"></a>
         <br />
-        Agents: 37 Expires: 2021-03-23 State: ON Sold:{" "}
+        Agents: {i.max_agents} <br />
+        Expires: 2021-03-23 State: ON Sold:{" "}
         <span className="uk-label">Default</span>
       </div>
     </div>
   );
 }
 
-function Operator(prop: { name: string; cluster: string }) {
+function Operator(prop: { op: Operator }) {
   return (
     <li>
       <a className="uk-accordion-title" href="#">
-        {prop.name} ({prop.cluster})
+        {prop.op.name} ({prop.op.token})
       </a>
       <div className="uk-accordion-content">
         <div className="uk-child-width-expand@s uk-text-center" uk-grid>
-          <Instance n="gino" />
-          <Instance n="pino" />
+          {prop.op.instances.map((i: IInstance) => (
+            <Instance instance={i} />
+          ))}
         </div>
       </div>
     </li>
   );
 }
 
-function Operators() {
+function Operators(prop: { ops: any[] }) {
+  const ops = prop.ops;
   return (
     <div>
-      <h1>Operators</h1>
+      <h1>Operators {ops.length}</h1>
       <ul uk-accordion="collapsible: false">
-        <Operator name="ZEBRON" cluster="ams" />
-        <Operator name="CICCIA" cluster="za" />
+        {ops.map((i: Operator) => (
+          <Operator op={i} />
+        ))}
       </ul>
     </div>
   );

@@ -9,16 +9,22 @@
     "lint": "next lint",
     "export": "next build && next export",
     "exported": "serve ./out/",
-    "fixfix": "prettier -w pages/ components/ styles/"
+    "fixfix": "prettier -w *.ts store/ pages/ components/ styles/ "
   },
   "dependencies": {
     "next": "11.1.2",
     "react": "17.0.2",
     "react-dom": "17.0.2",
+    "react-redux": "^7.2.5",
+    "redux": "^4.1.1",
+    "redux-thunk": "^2.3.0",
     "uikit": "^3.7.3"
   },
   "devDependencies": {
     "@types/react": "17.0.21",
+    "@types/react-redux": "^7.1.18",
+    "@types/redux": "^3.6.0",
+    "@types/redux-thunk": "^2.1.0",
     "eslint": "7.32.0",
     "eslint-config-next": "11.1.2",
     "eslint-config-prettier": "^8.3.0",

@@ -1,18 +1,31 @@
+import type { AppProps } from "next/app";
+import { createStore, applyMiddleware, Store } from "redux";
+import { Provider } from "react-redux";
+import thunk from "redux-thunk";
+
 import UIKit from "../components/uikit";
+import reducer from "../store/reducer";
 
 // Global scss
 import "../styles/uikit.scss";
-//import "../styles/global.scss";
 
-//import '../styles/globals.css'
+const store: Store<SystemState, InstanceAction> & {
+  dispatch: DispatchType;
+} = createStore(reducer, applyMiddleware(thunk));
 
-import type { AppProps } from "next/app";
+//const rootElement = document.getElementById("root")
+//render(
+//    <App />
+//  rootElement
+//)
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <UIKit>
-      <Component {...pageProps} />
-    </UIKit>
+    <Provider store={store}>
+      <UIKit>
+        <Component {...pageProps} />
+      </UIKit>
+    </Provider>
   );
 }
 export default MyApp;
