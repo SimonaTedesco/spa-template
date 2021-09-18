@@ -1,23 +1,17 @@
-import type { NextPage } from 'next'
-import Operators from '../components/operators'
+import type { NextPage } from "next";
+import Operators from "../components/operators";
 
 const Instances: NextPage = () => {
   return (
-    <div >
-    <h1>Instances go here</h1>
-    <hr/>
+    <div>
+      <h1>Instances go here</h1>
+      <hr />
 
-    <Operators />
+      <Operators />
 
+      <a href="#">Some Link</a>
+    </div>
+  );
+};
 
-
-
-
-
-
-    <a href="#">Some Link</a>
-    </div>  
-  )
-}
-
-export default Instances
+export default Instances;

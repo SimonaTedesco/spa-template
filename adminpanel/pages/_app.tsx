@@ -4,16 +4,15 @@ import UIKit from "../components/uikit";
 import "../styles/uikit.scss";
 //import "../styles/global.scss";
 
-
 //import '../styles/globals.css'
 
-import type { AppProps } from 'next/app'
+import type { AppProps } from "next/app";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-  <UIKit>
-  <Component {...pageProps} />
-  </UIKit>
-  )
+    <UIKit>
+      <Component {...pageProps} />
+    </UIKit>
+  );
 }
-export default MyApp
+export default MyApp;
