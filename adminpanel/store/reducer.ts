@@ -5,16 +5,14 @@ import produce from "immer";
 const initialState: SystemState = {
   operators: [
     {
-      token: "tok",
-      name: "nam",
-      instances: [
-        {
-          client: "gino",
-          cluster: "ams",
-          max_agents: 23,
-          reseller: "nam",
-        },
-      ],
+      token: "tok1",
+      name: "ZEBRA_AMS",
+      instances: [],
+    },
+    {
+      token: "tok2",
+      name: "BUBU_AMS",
+      instances: [],
     },
   ],
 };

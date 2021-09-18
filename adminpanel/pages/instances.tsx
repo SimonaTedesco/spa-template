@@ -1,7 +1,9 @@
 import * as React from "react";
+
 import { Dispatch } from "redux";
 import { useSelector, shallowEqual, useDispatch } from "react-redux";
 import type { NextPage } from "next";
+import Link from "next/link";
 
 import Operators from "../components/operators";
 import { NewInstance } from "../components/newinstance";
@@ -13,16 +15,20 @@ const Instances: NextPage = () => {
     shallowEqual
   );
 
+
+// <pre>{JSON.stringify(operators, null, 2)}</pre>
+
+
   return (
     <div>
-      <h1>Instances go here</h1>
-      <hr />
-
-      <pre>{JSON.stringify(operators, null, 2)}</pre>
-
+      <h1>Operators</h1>
+      
       <Operators ops={operators} />
 
-      <a href="#">Some Link</a>
+      <Link href="/">
+        <a>Home!</a>
+      </Link>
+
     </div>
   );
 };

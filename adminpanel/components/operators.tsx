@@ -29,8 +29,11 @@ function Operator(prop: { op: Operator }) {
 
   const saveInstance = React.useCallback(
     (article: IInstance) => {
-      article.reseller = token;
-      dispatch(addArticle(article));
+      const newInst = {
+          ...article,
+          reseller: token
+      }  
+      dispatch(addArticle(newInst));
     },
     [dispatch]
   );
@@ -41,9 +44,9 @@ function Operator(prop: { op: Operator }) {
         {prop.op.name} ({prop.op.token})
       </a>
       <div className="uk-accordion-content">
-        <div className="uk-child-width-expand@s uk-text-center" uk-grid>
+        <div className="uk-child-width-expand@s uk-text-center uk-grid">
           {prop.op.instances.map((i: IInstance) => (
-            <Instance instance={i} />
+            <Instance instance={i} key={i.client} />
           ))}
         </div>
         <NewInstance saveInstance={saveInstance} />
@@ -56,10 +59,9 @@ function Operators(prop: { ops: any[] }) {
   const ops = prop.ops;
   return (
     <div>
-      <h1>Operators {ops.length}</h1>
       <ul uk-accordion="collapsible: false">
         {ops.map((i: Operator) => (
-          <Operator op={i} />
+          <Operator op={i} key={i.name} />
         ))}
       </ul>
     </div>

@@ -31,4 +31,22 @@ npm install -D sass
 
 
 
+npm install -D prettier eslint-config-prettier
+
+
+-------
+
+REdux https://www.merixstudio.com/blog/introduction-using-redux-toolkit-nextjs-and-typescript/
+
+
+See https://www.freecodecamp.org/news/how-to-use-redux-in-your-react-typescript-app/
+
+npm install rredux react-redux redux-thunk
+npm install -D @types/redux @types/react-redux @types/redux-thunk
+
+
+
+
+
+
 
