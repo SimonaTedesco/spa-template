@@ -1,6 +1,7 @@
 // 1. Your custom variables and variable overwrites.
-$global-link-color: #844;
+$global-link-color: $globalLinkColor;
 $inverse-global-color-mode: none;
+$global-font-family: $globalFont;
 
 // 2. Import default variables and available mixins.
 @import "uikit/src/scss/variables-theme.scss";

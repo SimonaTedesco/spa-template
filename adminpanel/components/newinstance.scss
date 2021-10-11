@@ -1,0 +1,19 @@
+.NewInstance {
+    margin-left: 20px;
+
+    .form_button{
+        border: 1px solid ;
+        padding: 6px;
+        background-color: $backgroundColor;
+        color: $globalLinkColor;
+        cursor: pointer;
+    }
+}
+
+#client, #cluster, #max_agents {
+    background-color: $backgroundColor;
+    margin: 0px 10px 10px 0px;
+    color: $globalLinkColor;
+    padding: 5px;
+
+}
