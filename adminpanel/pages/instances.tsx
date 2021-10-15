@@ -15,20 +15,19 @@ const Instances: NextPage = () => {
     shallowEqual
   );
 
-
-// <pre>{JSON.stringify(operators, null, 2)}</pre>
-
+  // <pre>{JSON.stringify(operators, null, 2)}</pre>
 
   return (
-    <div>
-      <h1>Operators</h1>
-      
+    <div className="Instances">
+      <h1 className="header-Instances">Operators</h1>
+
       <Operators ops={operators} />
 
       <Link href="/">
-        <a>Home!</a>
+        <span className="uk-button uk-button-default buttonOverwrite">
+          Home
+        </span>
       </Link>
-
     </div>
   );
 };

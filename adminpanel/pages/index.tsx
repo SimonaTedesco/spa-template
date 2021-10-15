@@ -3,14 +3,18 @@ import Link from "next/link";
 
 const Home: NextPage = () => {
   return (
-    <div>
-      <h1>Hello from UiKit!</h1>A Heart Icon here:{" "}
-      <span className="uk-icon" data-uk-icon="heart"></span>
-      <hr />
-      <a href="#">Some Link</a>
-      <br />
+    <div className="Homepage">
+      <h1 className="header">Operator Manager</h1>
+      <p className="paragraph">
+        {" "}
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+        <br /> sed do eiusmod tempor incididunt ut labore et dolore magna.
+        <br /> ullamco laboris nisi ut aliquip ex ea commodo consequat.{" "}
+      </p>
       <Link href="/instances">
-        <a>Instances go here!</a>
+        <span className="uk-button uk-button-default buttonOverwrite">
+          Operators
+        </span>
       </Link>
     </div>
   );

@@ -1,0 +1,18 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: $globalFont;
+  height: 100%;
+  background-color: $backgroundColor;
+
+  .buttonOverwrite {
+    color: $globalLinkColor;
+
+    &:hover {
+      color: $invertedTextColor;
+      text-decoration: none;
+      background-color: $invertedBackgroundColor;
+    }
+  }
+}

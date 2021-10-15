@@ -1,0 +1,35 @@
+.Operators {
+  text-align: left;
+  margin-bottom: 50px;
+
+  .operatorInstance {
+    color: $headerColor;
+    margin-bottom: 30px;
+  }
+
+  .operatorInstance::before {
+    float: left;
+  }
+
+  .Instance {
+    .cardOverwrite {
+      //box-shadow: none;
+      //-webkit-box-shadow: none;
+      margin-bottom: 30px;
+      text-align: left;
+      color: $headerColor;
+      background-color: $backgroundColor;
+      margin-right: 30px;
+      box-shadow: 0px 5px 5px rgb(0 0 0 / 8%);
+
+      .iconOverwrite {
+        color: $headerColor;
+        background-color: $iconBackground;
+      }
+      .iconTopOverwrite {
+        display: inline-block;
+        float: right;
+      }
+    }
+  }
+}

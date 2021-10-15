@@ -7,7 +7,7 @@ import UIKit from "../components/uikit";
 import reducer from "../store/reducer";
 
 // Global scss
-import "../styles/uikit.scss";
+import "../styles/master.scss";
 
 const store: Store<SystemState, InstanceAction> & {
   dispatch: DispatchType;

@@ -29,7 +29,7 @@ export const NewInstance: React.FC<Props> = ({
   };
 
   return (
-    <form onSubmit={addNewArticle}>
+    <form onSubmit={addNewArticle} className="NewInstance">
       <input
         type="text"
         id="client"
@@ -49,7 +49,7 @@ export const NewInstance: React.FC<Props> = ({
         onChange={handleArticleData}
       />
 
-      <button disabled={myState === undefined ? true : false}>
+      <button className="form_button" disabled={myState === undefined ? true : false}>
         Add client
       </button>
     </form>

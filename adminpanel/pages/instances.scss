@@ -1,0 +1,15 @@
+.Instances {
+  text-align: left;
+  background-color: $backgroundColor;
+  padding: 50px 100px;
+  height: 100%;
+
+  .header-Instances {
+    color: $headerColor;
+    margin-bottom: 30px;
+  }
+
+  .iconOverwrite {
+    margin: 10px 10px 5px 0;
+  }
+}

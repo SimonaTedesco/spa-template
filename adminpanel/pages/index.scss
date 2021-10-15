@@ -1,0 +1,20 @@
+.Homepage{
+
+    background-color: $backgroundColor;
+    padding: 100px;
+    height: 100%;
+    text-align: center;
+
+    .header{
+        color: $headerColor;
+    }
+    .paragraph{
+        color: $headerColor;
+        margin-bottom: 30px;
+    }
+
+}
+
+.Homepage > div {
+    height:100%;
+}
